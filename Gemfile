@@ -15,6 +15,10 @@ gem 'mongoid', '~> 6.0.0'
 
 gem 'devise'
 
+gem 'material_design_lite-rails', '~> 1.2'
+gem 'material_icons'
+
+gem 'slim', '~> 3.0', '>= 3.0.7'
 
 group :development, :test do
   gem 'byebug', platform: :mri
