@@ -7,13 +7,15 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 
-gem 'jquery-rails'
-gem 'turbolinks', '~> 5'
+# gem 'jquery-rails'
+# gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'mongoid', '~> 6.0.0'
+gem "mongoid-paperclip"
 
 gem 'devise'
+gem 'redcarpet'
 
 gem 'material_design_lite-rails', '~> 1.2'
 gem 'material_icons'

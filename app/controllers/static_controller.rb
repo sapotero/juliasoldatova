@@ -1,5 +1,6 @@
 class StaticController < ApplicationController
   def blog
+    @posts = Post.all
   end
 
   def portfolio
