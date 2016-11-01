@@ -1,6 +1,4 @@
 header.mdl-layout__header.mdl-layout__header--waterfall.portfolio-header
-  .mdl-layout__drawer-button.mdl-layout--small-screen-only aria-expanded="false" role="button" tabindex="0" 
-    i.material-icons 
   .mdl-layout__header-row.portfolio-logo-row
     span.mdl-layout__title
       .portfolio-logo
@@ -8,21 +6,21 @@ header.mdl-layout__header.mdl-layout__header--waterfall.portfolio-header
         =t :brand
   .mdl-layout__header-row.portfolio-navigation-row.mdl-layout--large-screen-only
     nav.mdl-navigation.mdl-typography--body-1-force-preferred-font
-      a.mdl-navigation__link.is-active href="index.html"
+      a.mdl-navigation__link href="#{portfolio_path}"
         =t :portfolio
-      a.mdl-navigation__link href="blog.html"
+      a.mdl-navigation__link href="#{blog_path}"
         =t :blog
-      a.mdl-navigation__link href="about.html"
+      a.mdl-navigation__link href="#{about_path}"
         =t :about
-      a.mdl-navigation__link href="contact.html"
+      a.mdl-navigation__link href="#{contact_path}"
         =t :contact
-.mdl-layout__drawer.mdl-layout--small-screen-only aria-hidden="true" 
+.mdl-layout__drawer.mdl-layout--small-screen-only
   nav.mdl-navigation.mdl-typography--body-1-force-preferred-font
-    a.mdl-navigation__link.is-active href="index.html"
+    a.mdl-navigation__link href="#{portfolio_path}"
       =t :portfolio
-    a.mdl-navigation__link href="blog.html"
+    a.mdl-navigation__link href="#{blog_path}"
       =t :blog
-    a.mdl-navigation__link href="about.html"
+    a.mdl-navigation__link href="#{about_path}"
       =t :about
-    a.mdl-navigation__link href="contact.html"
+    a.mdl-navigation__link href="#{contact_path}"
       =t :contact
