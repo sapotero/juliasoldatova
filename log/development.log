@@ -1,0 +1,240 @@
+Started GET "/" for 185.36.60.147 at 2016-11-01 10:24:00 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/sapotero/.rvm/gems/ruby-2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/sapotero/.rvm/gems/ruby-2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 12ms (Views: 5.2ms)
+
+
+Started GET "/" for 185.36.60.147 at 2016-11-01 10:31:01 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+MONGODB | Adding localhost:27017 to the cluster.
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"posts", "filter"=>{}}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.012379422000000001s
+  Rendered posts/index.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 697ms (Views: 686.4ms)
+
+
+Started GET "/" for 185.36.60.147 at 2016-11-01 10:32:43 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 10ms
+
+
+Started GET "/users/sign_in" for 185.36.60.147 at 2016-11-01 10:32:43 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 175ms (Views: 174.0ms)
+
+
+MONGODB | Adding localhost:27017 to the cluster.
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"sapotero@gmail.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.003351329s
+MONGODB | localhost:27017 | blog_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('581853513c92ba087fb95634'), "email"=>"sapotero@gmail.com", "encrypted_password"=>"$2a$11$hGzztgFkbPoXN11IWO6dC.ucpWqTLjhJKHJJVL4FJWItW/x21nXXG", "sign_in_count"=>0}], "ordered"=>true}
+MONGODB | localhost:27017 | blog_app_development.insert | SUCCEEDED | 0.037865196s
+Started POST "/users/sign_in" for 185.36.60.147 at 2016-11-01 10:34:55 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WV5FwCRGHg6E3TyPRdDRkGRJN4nee25JlE+ivrblGS0gGkUqNHz9rS2BLGBzg4IawC0/GUEYKe4Hx83ZttW/0Q==", "user"=>{"email"=>"sapotero@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+MONGODB | Adding localhost:27017 to the cluster.
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"sapotero@gmail.com"}, "limit"=>1, "sort"=>{"_id"=>1}, "singleBatch"=>true}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.001469558s
+MONGODB | localhost:27017 | blog_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('581853513c92ba087fb95634')}, "u"=>{"$set"=>{"remember_created_at"=>2016-11-01 08:34:56 UTC}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | blog_app_development.update | SUCCEEDED | 0.000462885s
+MONGODB | localhost:27017 | blog_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('581853513c92ba087fb95634')}, "u"=>{"$set"=>{"last_sign_in_at"=>2016-11-01 08:34:56 UTC, "current_sign_in_at"=>2016-11-01 08:34:56 UTC, "last_sign_in_ip"=>"185.36.60.147", "current_sign_in_i...
+MONGODB | localhost:27017 | blog_app_development.update | SUCCEEDED | 0.00038444s
+Redirected to http://juliasoldatova.ru:3000/
+Completed 302 Found in 154ms
+
+
+Started GET "/" for 185.36.60.147 at 2016-11-01 10:34:56 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('581853513c92ba087fb95634')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000387587s
+  Rendering posts/index.html.erb within layouts/application
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"posts", "filter"=>{}}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.00038137100000000003s
+  Rendered posts/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 210ms (Views: 202.3ms)
+
+
+Started GET "/posts/new" for 185.36.60.147 at 2016-11-01 10:34:58 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('581853513c92ba087fb95634')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000400031s
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (7.0ms)
+  Rendered posts/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 28ms (Views: 25.3ms)
+
+
+Started POST "/posts" for 185.36.60.147 at 2016-11-01 10:35:06 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3RF3r2X1aE7pYSdYV3As4F6C7LgOkIxCy0u4xErwTVbWW4BHa6/eJjZGTp93+16amjmKzlRtINuKXPDCroXaPQ==", "post"=>{"title"=>"Test", "body"=>"TESTETSE"}, "commit"=>"Create Post"}
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('581853513c92ba087fb95634')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000312689s
+MONGODB | localhost:27017 | blog_app_development.insert | STARTED | {"insert"=>"posts", "documents"=>[{"_id"=>BSON::ObjectId('581853ba3c92ba088ce386ee'), "title"=>"Test", "body"=>"TESTETSE"}], "ordered"=>true}
+MONGODB | localhost:27017 | blog_app_development.insert | SUCCEEDED | 0.016050216000000003s
+Redirected to http://juliasoldatova.ru:3000/posts/581853ba3c92ba088ce386ee
+Completed 302 Found in 19ms
+
+
+Started GET "/posts/581853ba3c92ba088ce386ee" for 185.36.60.147 at 2016-11-01 10:35:06 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"581853ba3c92ba088ce386ee"}
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('581853513c92ba087fb95634')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000272909s
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"posts", "filter"=>{"_id"=>BSON::ObjectId('581853ba3c92ba088ce386ee')}}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000145223s
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 17ms (Views: 14.5ms)
+
+
+Started GET "/posts" for 185.36.60.147 at 2016-11-01 10:35:08 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('581853513c92ba087fb95634')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000314362s
+  Rendering posts/index.html.erb within layouts/application
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"posts", "filter"=>{}}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000258639s
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 23ms (Views: 21.6ms)
+
+
+Started GET "/posts/581853ba3c92ba088ce386ee" for 185.36.60.147 at 2016-11-01 10:35:10 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"581853ba3c92ba088ce386ee"}
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('581853513c92ba087fb95634')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.00032688s
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"posts", "filter"=>{"_id"=>BSON::ObjectId('581853ba3c92ba088ce386ee')}}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000129318s
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 35ms (Views: 32.4ms)
+
+
+Started GET "/posts" for 185.36.60.147 at 2016-11-01 10:35:11 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('581853513c92ba087fb95634')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000784199s
+  Rendering posts/index.html.erb within layouts/application
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"posts", "filter"=>{}}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000200537s
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 25ms (Views: 20.6ms)
+
+
+Started GET "/posts/581853ba3c92ba088ce386ee" for 185.36.60.147 at 2016-11-01 10:35:12 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"581853ba3c92ba088ce386ee"}
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('581853513c92ba087fb95634')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000425653s
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"posts", "filter"=>{"_id"=>BSON::ObjectId('581853ba3c92ba088ce386ee')}}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.00024782s
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 23ms (Views: 19.8ms)
+
+
+Started GET "/posts" for 185.36.60.147 at 2016-11-01 10:35:13 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('581853513c92ba087fb95634')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000537443s
+  Rendering posts/index.html.erb within layouts/application
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"posts", "filter"=>{}}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000195752s
+  Rendered posts/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 32ms (Views: 28.8ms)
+
+
+Started GET "/posts/581853ba3c92ba088ce386ee" for 185.36.60.147 at 2016-11-01 10:35:13 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"581853ba3c92ba088ce386ee"}
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('581853513c92ba087fb95634')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.001119431s
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"posts", "filter"=>{"_id"=>BSON::ObjectId('581853ba3c92ba088ce386ee')}}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000445982s
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 29ms (Views: 22.4ms)
+
+
+Started GET "/posts" for 185.36.60.147 at 2016-11-01 10:35:14 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('581853513c92ba087fb95634')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000300769s
+  Rendering posts/index.html.erb within layouts/application
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"posts", "filter"=>{}}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000309576s
+  Rendered posts/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 28ms (Views: 24.0ms)
+
+
+Started GET "/posts/581853ba3c92ba088ce386ee" for 185.36.60.147 at 2016-11-01 10:35:15 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"581853ba3c92ba088ce386ee"}
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('581853513c92ba087fb95634')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000306441s
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"posts", "filter"=>{"_id"=>BSON::ObjectId('581853ba3c92ba088ce386ee')}}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000189568s
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 26.9ms)
+
+
+Started GET "/posts" for 185.36.60.147 at 2016-11-01 10:35:16 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('581853513c92ba087fb95634')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000353477s
+  Rendering posts/index.html.erb within layouts/application
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"posts", "filter"=>{}}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000294683s
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 29ms (Views: 26.9ms)
+
+
+Started GET "/posts/581853ba3c92ba088ce386ee" for 185.36.60.147 at 2016-11-01 10:35:17 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"581853ba3c92ba088ce386ee"}
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('581853513c92ba087fb95634')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000396s
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"posts", "filter"=>{"_id"=>BSON::ObjectId('581853ba3c92ba088ce386ee')}}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.00021483s
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 27ms (Views: 23.2ms)
+
+
+Started GET "/posts" for 185.36.60.147 at 2016-11-01 10:35:18 +0200
+Cannot render console from 185.36.60.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('581853513c92ba087fb95634')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000347594s
+  Rendering posts/index.html.erb within layouts/application
+MONGODB | localhost:27017 | blog_app_development.find | STARTED | {"find"=>"posts", "filter"=>{}}
+MONGODB | localhost:27017 | blog_app_development.find | SUCCEEDED | 0.000203859s
+  Rendered posts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 20ms (Views: 18.4ms)
+
+
