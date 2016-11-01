@@ -1,94 +1,134 @@
 doctype html
 html
   head
-    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
-    title BlogApp
+    meta charset="utf-8" /
+    meta content="IE=edge" http-equiv="X-UA-Compatible" /
+    meta content=("A portfolio template that uses Material Design Lite.") name="description" /
+    meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0" name="viewport" /
+
+    title
+      =t :app
+
+
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    
+    link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet" /
+    link href="https://code.getmdl.io/1.2.1/material.grey-pink.min.css" rel="stylesheet" /
   body
-    .demo-blog.mdl-layout.mdl-js-layout.has-drawer.is-upgraded
-      p.notice= notice
-      p.alert= alert
-      main.mdl-layout__content
-        .demo-blog__posts.mdl-grid
-          .mdl-card.coffee-pic.mdl-cell.mdl-cell--8-col
-            .mdl-card__media.mdl-color-text--grey-50
-              h3
-                a href="entry.html"  Coffee Pic
-            .mdl-card__supporting-text.meta.mdl-color-text--grey-600
-              .minilogo
-              div
-                strong The Newist
-                span 2 days ago
-          .mdl-card.something-else.mdl-cell.mdl-cell--8-col.mdl-cell--4-col-desktop
-            button.mdl-button.mdl-js-ripple-effect.mdl-js-button.mdl-button--fab.mdl-color--accent
-              i.material-icons.mdl-color-text--white role="presentation"  add
-              span.visuallyhidden add
-            .mdl-card__media.mdl-color--white.mdl-color-text--grey-600
-              img src="assets/images/logo.png" /
-              | +1,337
-            .mdl-card__supporting-text.meta.meta--fill.mdl-color-text--grey-600
-              div
-                strong The Newist
-              ul.mdl-menu.mdl-js-menu.mdl-menu--bottom-right.mdl-js-ripple-effect for="menubtn" 
-                li.mdl-menu__item About
-                li.mdl-menu__item Message
-                li.mdl-menu__item Favorite
-                li.mdl-menu__item Search
-              button#menubtn.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--icon
-                i.material-icons role="presentation"  more_vert
-                span.visuallyhidden show menu
-          .mdl-card.on-the-road-again.mdl-cell.mdl-cell--12-col
-            .mdl-card__media.mdl-color-text--grey-50
-              h3
-                a href="entry.html"  On the road again
-            .mdl-color-text--grey-600.mdl-card__supporting-text
-              | Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
-            .mdl-card__supporting-text.meta.mdl-color-text--grey-600
-              .minilogo
-              div
-                strong The Newist
-                span 2 days ago
-          .mdl-card.amazing.mdl-cell.mdl-cell--12-col
-            .mdl-card__title.mdl-color-text--grey-50
-              h3.quote
-                a href="entry.html"  I couldn’t take any pictures but this was an amazing thing…
-            .mdl-card__supporting-text.mdl-color-text--grey-600
-              | Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
-            .mdl-card__supporting-text.meta.mdl-color-text--grey-600
-              .minilogo
-              div
-                strong The Newist
-                span 2 days ago
-          .mdl-card.shopping.mdl-cell.mdl-cell--12-col
-            .mdl-card__media.mdl-color-text--grey-50
-              h3
-                a href="entry.html"  Shopping
-            .mdl-card__supporting-text.mdl-color-text--grey-600
-              | Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
-            .mdl-card__supporting-text.meta.mdl-color-text--grey-600
-              .minilogo
-              div
-                strong The Newist
-                span 2 days ago
-          nav.demo-nav.mdl-cell.mdl-cell--12-col
-            .section-spacer
-            a.demo-nav__button href="entry.html" title=("show more") 
-              | More
-              button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--icon
-                i.material-icons role="presentation"  arrow_forward
-          = yield
-        footer.mdl-mini-footer
-          .mdl-mini-footer--left-section
-            button.mdl-mini-footer--social-btn.social-btn.social-btn__twitter
-              span.visuallyhidden Twitter
-            button.mdl-mini-footer--social-btn.social-btn.social-btn__blogger
-              span.visuallyhidden Facebook
-            button.mdl-mini-footer--social-btn.social-btn.social-btn__gplus
-              span.visuallyhidden Google Plus
-          .mdl-mini-footer--right-section
-            button.mdl-mini-footer--social-btn.social-btn__share
-              i.material-icons role="presentation"  share
-              span.visuallyhidden share
-      .mdl-layout__obfuscator
+    .mdl-layout__container
+      .mdl-layout.mdl-js-layout.mdl-layout--fixed-header.has-drawer.is-upgraded data-upgraded=",MaterialLayout"
+        =render "shared/header"
+
+        main.mdl-layout__content
+          .mdl-grid.portfolio-max-width
+            .mdl-cell.mdl-card.mdl-shadow--4dp.portfolio-card
+              .mdl-card__media
+                img.article-image alt="" border="0" src=(" images/example-work01.jpg") /
+              .mdl-card__title
+                h2.mdl-card__title-text Blog template
+              .mdl-card__supporting-text
+                | Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
+              .mdl-card__actions.mdl-card--border
+                a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent data-upgraded=",MaterialButton,MaterialRipple" href="portfolio-example01.html" 
+                  | Read more
+                  span.mdl-button__ripple-container
+                    span.mdl-ripple
+            .mdl-cell.mdl-card.mdl-shadow--4dp.portfolio-card
+              .mdl-card__media
+                img.article-image alt="" border="0" src=(" images/example-work07.jpg") /
+              .mdl-card__title
+                h2.mdl-card__title-text Sunt nulla
+              .mdl-card__supporting-text
+                | Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
+              .mdl-card__actions.mdl-card--border
+                a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent data-upgraded=",MaterialButton,MaterialRipple" href="portfolio-example01.html" 
+                  | Read more
+                  span.mdl-button__ripple-container
+                    span.mdl-ripple
+            .mdl-cell.mdl-card.mdl-shadow--4dp.portfolio-card
+              .mdl-card__media
+                img.article-image alt="" border="0" src=(" images/example-work02.jpg") /
+              .mdl-card__title
+                h2.mdl-card__title-text Android.com website
+              .mdl-card__supporting-text
+                | Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
+              .mdl-card__actions.mdl-card--border
+                a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent data-upgraded=",MaterialButton,MaterialRipple" href="portfolio-example01.html" 
+                  | Read more
+                  span.mdl-button__ripple-container
+                    span.mdl-ripple
+            .mdl-cell.mdl-card.mdl-shadow--4dp.portfolio-card
+              .mdl-card__media
+                img.article-image alt="" border="0" src=(" images/example-work03.jpg") /
+              .mdl-card__title
+                h2.mdl-card__title-text Dashboard template
+              .mdl-card__supporting-text
+                | Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
+              .mdl-card__actions.mdl-card--border
+                a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent data-upgraded=",MaterialButton,MaterialRipple" href="portfolio-example01.html" 
+                  | Read more
+                  span.mdl-button__ripple-container
+                    span.mdl-ripple
+            .mdl-cell.mdl-card.mdl-shadow--4dp.portfolio-card
+              .mdl-card__media
+                img.article-image alt="" border="0" src=(" images/example-work04.jpg") /
+              .mdl-card__title
+                h2.mdl-card__title-text Text-heavy website
+              .mdl-card__supporting-text
+                | Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
+              .mdl-card__actions.mdl-card--border
+                a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent data-upgraded=",MaterialButton,MaterialRipple" href="portfolio-example01.html" 
+                  | Read more
+                  span.mdl-button__ripple-container
+                    span.mdl-ripple
+            .mdl-cell.mdl-card.mdl-shadow--4dp.portfolio-card
+              .mdl-card__media
+                img.article-image alt="" border="0" src=(" images/example-work08.jpg") /
+              .mdl-card__title
+                h2.mdl-card__title-text Ex officia laborum
+              .mdl-card__supporting-text
+                | Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
+              .mdl-card__actions.mdl-card--border
+                a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent data-upgraded=",MaterialButton,MaterialRipple" href="portfolio-example01.html" 
+                  | Read more
+                  span.mdl-button__ripple-container
+                    span.mdl-ripple
+            .mdl-cell.mdl-card.mdl-shadow--4dp.portfolio-card
+              .mdl-card__media
+                img.article-image alt="" border="0" src=(" images/example-work05.jpg") /
+              .mdl-card__title
+                h2.mdl-card__title-text Stand-alone article
+              .mdl-card__supporting-text
+                | Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
+              .mdl-card__actions.mdl-card--border
+                a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent data-upgraded=",MaterialButton,MaterialRipple" href="portfolio-example01.html" 
+                  | Read more
+                  span.mdl-button__ripple-container
+                    span.mdl-ripple
+            .mdl-cell.mdl-card.mdl-shadow--4dp.portfolio-card
+              .mdl-card__media
+                img.article-image alt="" border="0" src=(" images/example-work06.jpg") /
+              .mdl-card__title
+                h2.mdl-card__title-text MDL website
+              .mdl-card__supporting-text
+                | Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
+              .mdl-card__actions.mdl-card--border
+                a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent data-upgraded=",MaterialButton,MaterialRipple" href="portfolio-example01.html" 
+                  | Read more
+                  span.mdl-button__ripple-container
+                    span.mdl-ripple
+            .mdl-cell.mdl-card.mdl-shadow--4dp.portfolio-card
+              .mdl-card__media
+                img.article-image alt="" border="0" src=(" images/example-work09.jpg") /
+              .mdl-card__title
+                h2.mdl-card__title-text Consequat ut quis
+              .mdl-card__supporting-text
+                | Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
+              .mdl-card__actions.mdl-card--border
+                a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent data-upgraded=",MaterialButton,MaterialRipple" href="portfolio-example01.html" 
+                  | Read more
+                  span.mdl-button__ripple-container
+                    span.mdl-ripple
+          =render "shared/footer"
