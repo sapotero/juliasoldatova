@@ -15,6 +15,24 @@
  *= require material_icons
  *= require_self
  */
+.auth{
+  margin-bottom: 200px !important;
+}
+.auth_offset{
+  margin: 200px auto !important;
+}
+
+@media (max-width: 479px){
+.auth{
+  margin-top: 40px !important;
+  margin-bottom: 120px !important;
+}
+.auth_offset{
+  margin: 0px auto !important;
+}
+
+}
+
 .item_width{
   min-width: 800px !important;
 }

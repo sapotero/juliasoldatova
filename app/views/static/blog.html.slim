@@ -1,19 +1,27 @@
+
 .mdl-grid.portfolio-max-width
   - @posts.each do |post|
-  
-    .mdl-grid.mdl-cell.mdl-cell--12-col.mdl-cell--4-col-tablet.mdl-card.mdl-shadow--4dp
-      .mdl-card__media.mdl-cell.mdl-cell--12-col-tablet
-        =image_tag post.image.url, class: "article-image"
-        / img. alt="" border="0" src=("assets/images/example-blog01.jpg") /
-      .mdl-cell.mdl-cell--8-col
-        h2.mdl-card__title-text = post.title
-        .mdl-card__supporting-text.padding-top
-          span Posted 2 days ago
-          #tt1.icon.material-icons.portfolio-share-btn share
-          .mdl-tooltip for="tt1" 
-            | Share via social media
-        .mdl-card__supporting-text.no-left-padding
-          p = post.description
-          span
-            | Category:
-            a href="#"  Latest
+    -10.times do
+      - width_total = 12;
+      - sum = 0
+
+      -if sum <= width_total
+        - width = rand(2..6)
+        - sum += width
+
+        .mdl-grid.mdl-cell.mdl-card.mdl-shadow--4dp class=".mdl-cell--#{width}-col"
+          .mdl-card__media.mdl-cell class="mdl-cell--#{width}-col-tablet"
+            =image_tag post.image.url, class: "article-image"
+            / img. alt="" border="0" src=("assets/images/example-blog01.jpg") /
+          .mdl-cell.mdl-cell--8-col
+            h2.mdl-card__title-text = post.title
+            .mdl-card__supporting-text.padding-top
+              span Posted 2 days ago
+              #tt1.icon.material-icons.portfolio-share-btn share
+              .mdl-tooltip for="tt1" 
+                | Share via social media
+            .mdl-card__supporting-text.no-left-padding
+              p = post.description
+              span
+                | Category:
+                a href="#"  Latest
