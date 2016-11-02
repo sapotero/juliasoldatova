@@ -4,6 +4,7 @@ class StaticController < ApplicationController
   end
 
   def portfolio
+    @items = Item.all
   end
 
   def about

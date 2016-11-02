@@ -1,0 +1,11 @@
+.mdl-grid.portfolio-max-width
+  .mdl-cell.mdl-cell--12-col.mdl-card.mdl-shadow--4dp
+    .mdl-card__title
+      h2.mdl-card__title-text
+        | Редактирование
+    .mdl-grid
+      == render 'form'
+/ = link_to 'Show', @item
+/ '|
+/ = link_to 'Back', items_path
+

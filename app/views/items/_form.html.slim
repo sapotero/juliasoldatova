@@ -1,42 +1,43 @@
-= form_for @post, :html => {:class => 'mdl-grid'} do |f|
-  - if @post.errors.any?
+= form_for @item, :html => {:class => 'mdl-grid'} do |f|
+  - if @item.errors.any?
     #error_explanation
-      h2 = "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+      h2 = "#{pluralize(@item.errors.count, "error")} prohibited this item from being saved:"
       ul
-        - @post.errors.full_messages.each do |message|
+        - @item.errors.full_messages.each do |message|
           li = message
+
   .mdl-cell.mdl-cell--12-col.mdl-card__supporting-text.no-padding
     .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.full_width
-      input#title.mdl-textfield__input[type="text" name="post[title]" value="#{@post.title}"]
+      input#title.mdl-textfield__input[type="text" name="item[title]" value="#{@item.title}"]
       label.mdl-textfield__label[for="title"]
-        =t :post_title
+        =t :item_title
   .mdl-cell.mdl-cell--12-col.mdl-card__supporting-text.no-padding
     .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.full_width
-      input#description.mdl-textfield__input[type="text" name="post[description]" value="#{@post.description}" ]
+      input#description.mdl-textfield__input[type="text" name="item[description]" value="#{@item.description}" ]
       label.mdl-textfield__label[for="description"]
-        =t :post_decription
-  = cktext_area :post, :body, cols: 40, ckeditor: { uiColor: '#AADC6E', toolbar: 'mini' }, value: @post.body
+        =t :item_decription
+  = cktext_area :item, :body, cols: 40, ckeditor: { uiColor: '#AADC6E', toolbar: 'mini' }, value: @item.body
   h3.mdl-cell.mdl-cell--12-col.mdl-typography--headline
     | Установка картинки
   .mdl-cell.mdl-cell--12-col.mdl-card__supporting-text.no-padding
     .file_input
       label.image_input_button.mdl-button.mdl-js-button.mdl-button--fab.mdl-button--mini-fab.mdl-js-ripple-effect.mdl-button--colored
         i.material-icons file_upload
-        input#file_input_file.none[type="file" name="post[image]"  value="#{@post.image}" ]
+        input#file_input_file.none[type="file" name="item[image]"  value="#{@item.image}" ]
     #file_input_text_div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
       input#file_input_text.file_input_text.mdl-textfield__input[type="text"disabled readonly]
       label.mdl-textfield__label[for="file_input_text"]
-        - if @post.image_file_name
-          =@post.image_file_name
+        - if @item.image_file_name
+          =@item.image_file_name
       .hidden
         = f.file_field :image
-    - if @post.image
+    - if @item.image
       h3.mdl-cell.mdl-cell--12-col.mdl-typography--headline
         | Картинка, установленная сейчас
       .mdl-card__media
-        img.article-image[src="#{@post.image.url}" border="0" alt=""]
+        img.article-image[src="#{@item.image.url}" border="0" alt=""]
   .mdl-card__actions.mdl-card--border
-    a.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect[href="#{posts_path}"]
+    a.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect[href="#{items_path}"]
       | назад
     input.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent[type="submit"]
 

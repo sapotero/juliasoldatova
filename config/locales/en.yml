@@ -29,3 +29,7 @@ en:
   terms: "Оферта"
   brand: "Julia Soldatova"
   app: "Julia Soldatova - official site "
+  item_title : "Название"
+  item_decription : "Описание"
+  item_body : "Текст"
+  item_image : "Файл"

@@ -2,15 +2,15 @@
   .mdl-cell.mdl-cell--12-col.mdl-card.mdl-shadow--4dp
     .mdl-card__title
       h2.mdl-card__title-text
-        =@post.title
+        =@item.title
     .mdl-card__media
-      img.article-image[src="#{@post.image.url}" border="0" alt=""]
+      img.article-image[src="#{@item.image.url}" border="0" alt=""]
     .mdl-card__supporting-text
       strong
-        = @post.description
-    .mdl-grid.portfolio-copy.post_width
+        = @item.description
+    .mdl-grid.portfolio-copy.item_width
       .mdl-cell.mdl-cell--12-col
-        = @post.body.html_safe
+        = @item.body.html_safe
       / h3.mdl-cell.mdl-cell--12-col.mdl-typography--headline
       /   | Introduction
       / .mdl-cell.mdl-cell--6-col.mdl-card__supporting-text.no-padding
@@ -35,6 +35,6 @@
       /   p
       /     |  Excepteur reprehenderit sint exercitation ipsum consequat qui sit id velit elit. Velit anim eiusmod labore sit amet. Voluptate voluptate irure occaecat deserunt incididunt esse in. Sunt velit aliquip sunt elit ex nulla reprehenderit qui ut eiusmod ipsum do. Duis veniam reprehenderit laborum occaecat id proident nulla veniam. Duis enim deserunt voluptate aute veniam sint pariatur exercitation. Irure mollit est sit labore est deserunt pariatur duis aute laboris cupidatat. Consectetur consequat esse est sit veniam adipisicing ipsum enim irure. 
         
-/ = link_to 'Edit', edit_post_path(@post)
+/ = link_to 'Edit', edit_item_path(@item)
 / '|
-/ = link_to 'Back', posts_path
+/ = link_to 'Back', items_path

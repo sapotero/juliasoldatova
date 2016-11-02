@@ -15,6 +15,54 @@
  *= require material_icons
  *= require_self
  */
+.item_width{
+  min-width: 800px !important;
+}
+
+.full_width{
+  width: 100% !important;
+}
+
+.card_wrapper{
+  width:300px;
+  height:200px; 
+  display:block; 
+  position:relative;
+  overflow:hidden;
+}
+.card_wrapper > img.article-image{
+  position:absolute;
+  top:0;
+  left:0; 
+  width:100%;
+}
+
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file_input_div {
+  margin: auto;
+  width: 250px;
+  height: 40px;
+}
+
+.file_input {
+  float: left;
+}
+
+#file_input_text_div {
+  width: 200px;
+  margin-top: -8px;
+  margin-left: 5px;
+}
+
+.none {
+  display: none;
+}
 
 .portfolio-header {
   position: relative;
